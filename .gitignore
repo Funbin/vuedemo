@@ -1,0 +1,12 @@
+.DS_Store
+.idea/
+node_modules/
+dist/
+dist_mobile/
+dist_pc/
+npm-debug.log
+test/unit/coverage
+test/e2e/reports
+selenium-debug.log
+stats.json
+.cache/

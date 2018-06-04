@@ -1,0 +1,100 @@
+@theme-color:#ff7e0f;
+@gray:#8e8e8e;
+@btn-color:#fe7f0e;
+@input-color:#0f0f0f;
+@input-size:.3rem;
+
+.animation(@arg){
+    .compat(animation,@arg);
+}
+.transform(@arg){
+    .compat(transform,@arg);
+}
+.transition(@arg){
+    .compat(transition,@arg);
+}
+.border-radius(@arg){
+    .compat(border-radius,@arg);
+}
+.compat(@name,@value){
+    @{name}: @value;
+    -o-@{name}: @value;
+    -ms-@{name}: @value;
+    -moz-@{name}: @value;
+    -webkit-@{name}: @value;
+}
+.keyframes(@name,@arg){
+    @keyframes @name{
+        @arg();
+    }
+    @-o-keyframes @name{
+        @arg();
+    }
+    @-ms-keyframes @name{
+        @arg();
+    }
+    @-moz-keyframes @name{
+        @arg();
+    }
+    @-webkit-keyframes @name{
+        @arg();
+    }
+}
+
+.loop-keyframes(@start,@space) when(@start<=100%){
+    @{start} {
+        //内容适当改变
+        .transform(rotate(3.6deg * @start));
+    }
+    .loop-keyframes((@start+@space),@space);
+}
+// 使用方法
+// .keyframes(load, {.loop-keyframes(0%,10%)});
+.display-flex{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    display: flex;
+}
+.flex(@arg:1){
+    .compat(box-flex,@arg);
+    .compat(flex,@arg);
+}
+.justify-content(center){
+    .compat(box-pack,center);
+    .compat(justify-content,center);
+}
+.justify-content(space-between){
+    .compat(box-pack,justify);
+    .compat(justify-content,space-between);
+}
+.align-items(center){
+    .compat(box-align,center);
+    .compat(align-items,center);
+}
+.flex-wrap{
+    .compat(box-lines,multiple);
+    .compat(flex-wrap,wrap);
+}
+.input-text{
+    overflow: hidden;
+    height: 1rem;
+    margin-left: .2rem;
+    padding: 0;
+    font-family: "microsoft yahei";
+    font-size: @input-size;
+    vertical-align: middle;
+    color: @input-color;
+    border: none;
+    border-width: 0;
+    border-color: transparent;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    outline: none;
+    background-color: transparent;
+    .compat(box-flex, 1);
+}

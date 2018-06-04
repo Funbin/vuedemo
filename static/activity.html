@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <!-- iOS Smart App Banner -->
+  <!-- <meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL"> -->
+  <meta name='apple-itunes-app' content='app-id=477927812'>
+  <!-- #content 属性可以传三个参数，以逗号隔开
+  #app-id(必选) 填写应用在APPStrore的ID
+  #affiliate-data(可选) 是iTunes 分销联盟计划的ID 一般用不到。
+  #app-argument（可选）点击『打开』给APP传参数 -->
+  <title>活动详情</title>
+  <style type="text/css">
+    *{
+      margin: 0;
+      padding: 0;
+      font-size: 1rem;
+    }
+    .main{
+    }
+    .full-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index:101;
+        border:none;
+        width:100%;
+        height:100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    app
+    <button onclick="startApp()">打开App</button>
+    <!-- 可以通过指定参数 S.browser_fallback_url 来指定去向URL -->
+    <a href="intent://www.kaola.com/product/8342.html#Intent;scheme=kaola;package=com.kaola;S.browser_fallback_url=http%3A%2F%2Fapp.kaola.com;end">打开APP</a>
+
+    <a id="isAndroid">打开APP (test)</a>
+    <iframe id="downPage" class="full-screen" style="display: none;" src="http://a.app.qq.com/o/simple.jsp?pkgname=com.vanchu.apps.insurance"></iframe>
+  </div>
+  <script type="text/javascript">
+  window.onload = function () {
+    document.getElementById('isAndroid').href = 'intent://#Intent;scheme='+'qubao100://car_insurance_renewal?orderId=338e3029c5cdedb9503807dfccd547948fdff635f98dda3184d0a7da2042771f8b62e555de4ffc3e665298d91e3b4303fcae9dadb799d7399f293dd143f643720e9059c9b78e4ff2&templateId=2'+';package=com.vanchu.apps.insurance;S.browser_fallback_url=http://a.app.qq.com/o/simple.jsp?pkgname=com.vanchu.apps.insurance;end';
+  }
+  window.onpopstate = function (event) {
+    document.getElementById('downPage').style.display = 'none';
+  }
+  //低版本支持自动跳转
+    // window.onload = startApp;
+    function startApp() {
+      alert("message?: DOMString")
+      // if (navigator.userAgent.toLowerCase().match('micromessenger')) {
+      //   window.location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.example.lfb_fileexplorer';
+      //   return;
+      // }
+      // var schemeUrl = 'app://com.test/data';
+      var schemeUrl = 'qubao100://car_insurance_buy?from=1001001';
+      // let schemeUrl = 'xxx://';
+      window.location.href = schemeUrl;
+      var openTime = Date.now();
+      setTimeout(()=>{
+        //没有安装app跳转到下载页面
+        if(Date.now() - openTime < 1100) {
+          document.getElementById('downPage').style.display = 'block';
+          history.pushState({}, "下载链接页", "");
+          // window.open('http://a.app.qq.com/o/simple.jsp?pkgname=com.vanchu.apps.insurance');
+        }
+      }, 1000);
+      //
+      //
+      // var ifr = document.createElement('iframe');
+      // ifr.src = schemeUrl;
+      // ifr.style.display = 'none';
+      // document.body.appendChild(ifr);
+      // window.setTimeout(function(){
+      //   document.body.removeChild(ifr);
+      // },3000);
+    }
+  </script>
+</body>
+</html>

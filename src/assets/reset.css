@@ -1,0 +1,395 @@
+/**************************************/
+
+
+/*                Reset               */
+
+
+/**************************************/
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+a,
+abbr,
+address,
+cite,
+em,
+img,
+small,
+strong,
+sub,
+sup,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  -webkit-text-size-adjust: none;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+a {
+  cursor: pointer;
+}
+
+:focus {
+  outline: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th {
+  font-weight: bold;
+}
+
+
+/**************************************/
+
+
+/*                Print               */
+
+
+/**************************************/
+
+body {
+  font: 12px/1.5 Tahoma, Arial, simsun, sans-serif;
+  color: #555;
+  background-color: #eff5f8;
+  min-width: 320px;
+  width: 100%;
+}
+
+html {
+  font-size: 100px;
+  background-color: #eff5f8;
+  width: 100%;
+}
+
+@media only screen and (max-width: 319px) {
+  html {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 409px) {
+  html {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (min-width: 410px) and (max-width: 479px) {
+  html {
+    font-size: 64px;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 559px) {
+  html {
+    font-size: 75px;
+  }
+}
+
+@media only screen and (min-width: 560px) and (max-width: 639px) {
+  html {
+    font-size: 87.5px;
+  }
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  font-weight: bold;
+}
+
+
+/**************************************/
+
+
+/*              Meta Class            */
+
+
+/**************************************/
+
+
+/* Font Typeset
+----------------------------------- */
+
+.fb {
+  font-weight: bold;
+}
+
+.fn {
+  font-weight: normal;
+}
+
+.fItalic {
+  font: italic 22px/22px Constantia, Georgia;
+}
+
+.fYahei {
+  font-family: "Microsoft YaHei";
+}
+
+
+/* location
+----------------------------------- */
+
+.tl {
+  text-align: left;
+}
+
+.tc {
+  text-align: center;
+}
+
+.tr {
+  text-align: right;
+}
+
+.tj {
+  text-align: justify;
+}
+
+.ul {
+  text-decoration: underline;
+}
+
+.hul:hover {
+  text-decoration: underline;
+}
+
+.bc {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fl {
+  float: left;
+  _display: inline;
+}
+
+.fr {
+  float: right;
+  _display: inline;
+}
+
+.cb {
+  clear: both;
+}
+
+.cl {
+  clear: left;
+}
+
+.cr {
+  clear: right;
+}
+
+.dtable {
+  display: table;
+}
+
+.dtcell {
+  display: table-cell;
+}
+
+.vt {
+  vertical-align: top;
+}
+
+.vm {
+  vertical-align: middle;
+}
+
+.vb {
+  vertical-align: bottom;
+}
+
+.pr,
+.loadWrap {
+  position: relative;
+}
+
+.pa {
+  position: absolute;
+}
+
+.of {
+  overflow: hidden;
+}
+
+.zoom {
+  zoom: 1;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.none {
+  display: none;
+}
+
+.show,
+.block {
+  display: block;
+}
+
+.ib {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+.cp {
+  cursor: pointer;
+}
+
+
+/**************************************/
+
+
+/*            Common config           */
+
+
+/**************************************/
+
+.clearfix:after {
+  display: block;
+  clear: both;
+  content: '';
+  visibility: none;
+  height: 0;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.box {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+}
+
+.box-inside {
+  -webkit-box-flex: 1;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;
+  /* OLD - Firefox 19- */
+  -webkit-flex: 1;
+  /* Chrome */
+  -ms-flex: 1;
+  /* IE 10 */
+  flex: 1;
+}
